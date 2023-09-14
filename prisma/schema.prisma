@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @unique
+  name          String
+  email         String         @unique
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id                String   @id @default(uuid())
+  name              String
+  price             Float
+  currency          String   @default("PLN")
+  start_date        String   // lub DateTime
+  end_date          String?  // lub DateTime
+  billing_period    String   @default("MONTHLY")
+  next_payment_date String   // lub DateTime
+  category          String
+  avatar_url        String
+  status            String   @default("ACTIVE")
+
+  ownerId  String
+  owner    User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  payments Payment[]
+}
+
+model Payment {
+  id       String   @id @default(uuid())
+  amount   Float
+  due_date String   // lub DateTime
+  status   String   @default("NOT_PAID")
+
+  subscriptionId String
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+}

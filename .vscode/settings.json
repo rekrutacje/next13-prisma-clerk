@@ -1,0 +1,16 @@
+{
+	"typescript.tsdk": "node_modules/typescript/lib", // korzystamy z lokalnej wersji Typescirpt
+	"editor.formatOnSave": true, // formatowanie kodu przy zapisie
+	"editor.defaultFormatter": "esbenp.prettier-vscode", // domyślny formatter
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true // ESLint w momencie zapisu
+	},
+	"graphql-config.dotEnvPath": "./.env", // zmienne środowiskowe graphql z pliku .env
+	"graphql-config.load.configName": "graphql",
+	"files.associations": {
+		"*.css": "tailwindcss" // wszystkie pliki css wspierane przez Tailwind'a
+	},
+	"editor.quickSuggestions": {
+		"strings": true // podpowiedzi klas Tailwind'a nawet w zwykłych stringach
+	}
+}
