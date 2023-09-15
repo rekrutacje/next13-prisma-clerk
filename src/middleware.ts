@@ -1,6 +1,6 @@
 import { authMiddleware } from "@clerk/nextjs";
 
-const publicRoutes = ["/", "/blog"];
+const publicRoutes = ["/", "/blog", "/api/webhooks/user"];
 
 // eslint-disable-next-line import/no-default-export
 export default authMiddleware({
