@@ -4,7 +4,7 @@
 
 2. Powyższe (w `route.ts`) możnaby bardziej otypować, ponieważ generalnie przyjmujemy `any` z Clerka.
 
-3. Aplikacja wystawiona na Vercel pod adresem `https://next13-prisma-clerk-subskrypcje.vercel.app/`, co oznacza, że przeszła CI/CD na Vercelu.
+3. Aplikacja wystawiona na Vercel pod adresem <https://next13-prisma-clerk-subskrypcje.vercel.app/>, co oznacza, że przeszła CI/CD na Vercelu.
 
 4. W `schema.prisma` schemat Prisma dla prostej aplikacji subskrypcje.
 
